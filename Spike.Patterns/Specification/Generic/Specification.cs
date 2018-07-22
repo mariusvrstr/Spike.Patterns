@@ -30,6 +30,7 @@ namespace Spike.Patterns.Specification.Generic
 
         public List<ClauseData> Clauses { get;} = new List<ClauseData>();
         private Operator CurrentOperator { get; set; }
+        private TSpecification Parent { get; set; }
 
         protected TSpecification Clause(Clause<TEntity> clause)
         {
@@ -68,7 +69,42 @@ namespace Spike.Patterns.Specification.Generic
             return CreateInternal(allowReturnAll);
         }
 
-        private Clause<TEntity> CreateInternal(bool allowReturnAll)
+        public TSpecification Group()
+        {
+            var val = new TSpecification();
+            val.Parent = (this as TSpecification);
+            return val;
+        }
+
+        public TSpecification EndGroup()
+        {
+            if (!Clauses.Any())
+            {
+                return Parent;
+            }
+
+            var specification = CreateInternal();
+
+            if (specification != null)
+            {
+                Parent.Clause(specification);
+            }
+            else
+            {
+                switch (Parent.CurrentOperator)
+                {
+                    case Operator.And:
+                        Parent.Clause(new TrueSpecification<TEntity>());
+                        break;
+                    case Operator.Or:
+                        Parent.Clause(new FalseSpecification<TEntity>());
+                        break;
+                }
+            }
+            return Parent;
+        }
+
+        private Clause<TEntity> CreateInternal(bool allowReturnAll = false)
         {
             if (!Clauses.Any() && allowReturnAll != true)
             {

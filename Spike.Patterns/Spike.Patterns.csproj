@@ -52,9 +52,12 @@
     <Compile Include="Specification\Generic\Clauses\CompositeClause.cs" />
     <Compile Include="Specification\Generic\Clauses\DirectClause.cs" />
     <Compile Include="Specification\Generic\Clauses\IClause.cs" />
+    <Compile Include="Specification\Generic\FalseSpecification.cs" />
+    <Compile Include="Specification\Generic\NotSpecification.cs" />
     <Compile Include="Specification\Generic\OrSpecification.cs" />
     <Compile Include="Specification\Generic\ReplaceExpressionVisitor.cs" />
     <Compile Include="Specification\Generic\Specification.cs" />
+    <Compile Include="Specification\Generic\TrueSpecification.cs" />
     <Compile Include="_Entities\AuthorEntity.cs" />
     <Compile Include="_Entities\BookEntity.cs" />
     <Compile Include="Singleton\DatabaseStub.cs" />

@@ -18,6 +18,11 @@ namespace Spike.Patterns.Specification.Generic.Clauses
             return new OrSpecification<TEntity>(this, clause);
         }
 
+        public IClause<TEntity> Not()
+        {
+            return new NotSpecification<TEntity>(this);
+        }
+
         public static Clause<TEntity> operator &(Clause<TEntity> leftSideSpecification, Clause<TEntity> rightSideSpecification)
         {
             return new AndSpecification<TEntity>(leftSideSpecification, rightSideSpecification);
@@ -26,6 +31,11 @@ namespace Spike.Patterns.Specification.Generic.Clauses
         public static Clause<TEntity> operator |(Clause<TEntity> leftSideSpecification, Clause<TEntity> rightSideSpecification)
         {
             return new OrSpecification<TEntity>(leftSideSpecification, rightSideSpecification);
+        }
+
+        public static Clause<TEntity> operator !(Clause<TEntity> specification)
+        {
+            return new NotSpecification<TEntity>(specification);
         }
 
         public static bool operator false(Clause<TEntity> clause)
