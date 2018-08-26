@@ -44,6 +44,11 @@
   <ItemGroup>
     <Compile Include="Builder\AuthorBuilder.cs" />
     <Compile Include="Builder\BookBuilder.cs" />
+    <Compile Include="DynamicDispatcher\Events\RoleChangedEvent.cs" />
+    <Compile Include="DynamicDispatcher\Events\ActivationChangedEvent.cs" />
+    <Compile Include="DynamicDispatcher\Generic\IEvent.cs" />
+    <Compile Include="DynamicDispatcher\User.cs" />
+    <Compile Include="DynamicDispatcher\Handlers\UserEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\Generic\SingletonBase.cs" />
     <Compile Include="Specification\BookSpecification.cs" />
