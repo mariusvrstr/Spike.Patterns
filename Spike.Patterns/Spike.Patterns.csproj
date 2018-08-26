@@ -58,6 +58,9 @@
     <Compile Include="Specification\Generic\ReplaceExpressionVisitor.cs" />
     <Compile Include="Specification\Generic\Specification.cs" />
     <Compile Include="Specification\Generic\TrueSpecification.cs" />
+    <Compile Include="State Machine\Generic\StateMachine.cs" />
+    <Compile Include="State Machine\Generic\Transition.cs" />
+    <Compile Include="State Machine\HelpDesk.cs" />
     <Compile Include="_Entities\AuthorEntity.cs" />
     <Compile Include="_Entities\BookEntity.cs" />
     <Compile Include="Singleton\DatabaseStub.cs" />
