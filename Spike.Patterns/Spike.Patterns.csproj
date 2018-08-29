@@ -49,6 +49,9 @@
     <Compile Include="DynamicDispatcher\Generic\IEvent.cs" />
     <Compile Include="DynamicDispatcher\User.cs" />
     <Compile Include="DynamicDispatcher\Handlers\UserEventHandler.cs" />
+    <Compile Include="KeyLocking\Generic\KeyLockGuard.cs" />
+    <Compile Include="KeyLocking\RegisterUser.cs" />
+    <Compile Include="KeyLocking\NewUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\Generic\SingletonBase.cs" />
     <Compile Include="Specification\BookSpecification.cs" />
